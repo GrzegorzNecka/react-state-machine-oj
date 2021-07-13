@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { getRandomId } from './getRandomId ';
 import './style.css';
 
 export default function App() {
@@ -30,6 +31,10 @@ export default function App() {
 
   function transition(currentState, action) {
     const nextState = transitions[currentState][action];
+    console.log(
+      'transitions[currentState][action]',
+      transitions[currentState][action]
+    );
     return nextState || currentState;
   }
 
@@ -39,10 +44,6 @@ export default function App() {
 
   const compareState = state => {
     return currentState === state;
-  };
-
-  const getRandomId = () => {
-    return Math.floor(Math.random() * 34);
   };
 
   const fetchCharacterImage = () => {
