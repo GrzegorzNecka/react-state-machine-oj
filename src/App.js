@@ -64,11 +64,8 @@ export default function App() {
 
   return (
     <div>
-      {console.log('currentState', currentState)}
-
-      {!compareState(states.hasLoaded) && <div>loading</div>}
-
-      {/* <img src={imageSrc} alt="" /> */}
+      {compareState(states.isLoading) && <div>loading</div>}
+      {!compareState(states.hasLoaded) && <img src={imageSrc} alt="" />}
 
       <button onClick={() => fetchCharacterImage()}>click</button>
     </div>
